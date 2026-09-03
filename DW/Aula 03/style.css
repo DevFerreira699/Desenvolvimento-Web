@@ -1,0 +1,91 @@
+body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#menu{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(249, 248, 248);
+    border-radius: 10px;
+}
+
+#textoMenu{
+    margin-left: 12px;
+}
+
+#linkMenu{
+    margin-right: 24px;
+    display: flex;
+    gap: 36px;
+
+}
+
+.linkMenu{
+   text-decoration:none;
+   color: #000000;
+}
+
+/*Aqui Finaliza o CSS do Menu E Come on da parte principal*/
+
+#caixaUm{
+    width: 100%;
+    height: 275px;
+    background-color: rgb(149, 147, 147);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#btnCxUm{
+    border: none;
+    background-color: rgb(5, 74, 152);
+    color: #f6f2f2;
+    padding: 6px 12px;
+    border-radius: 6px;
+}
+
+#btnCxUm:hover{
+    background-color: rgb(3, 49, 101);
+    cursor: pointer;
+}
+
+#caixaDois{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 32px;
+    gap: 24px;
+}
+
+#caixinha{
+    border: 1px solid #080808;
+    width: 25%;
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 12px;
+    align-items: center;
+}
+
+.linha{
+    width: 25%;
+    height: 2px;
+    background-color: #0a42b3; 
+}
+
+footer{
+    width: 100%;
+    background-color: rgb(138, 138, 138);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+}
