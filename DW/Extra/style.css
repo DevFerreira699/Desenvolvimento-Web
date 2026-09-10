@@ -1,24 +1,145 @@
-*{
-    padding: 0;
+* {
     margin: 0;
-    background-color: 
-}
-#CaixaUm{
-    margin: 20px 50% 15px 50px;
-
-
-.caixinha1{
-    border: 2px solid #000000;
-    text-align: center;
-    background-color: rgb(43, 81, 81);
-    padding: 100px;
-
-    
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.caixinha2{
-    border: 1px solid #000000;
-    text-align: center;
-    background-color: blueviolet;
-
+body {
+    width: 100%;
+    height: 100%;
 }
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* Área principal */
+main {
+    width: 100%;
+    height: calc(100vh - 35px);
+}
+
+/* Seção */
+section {
+    width: 100%;
+    height: 100%;
+    background-color: #f3f0ea;
+}
+
+/* Caixa principal */
+#CaixaUm {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 54% 46%;
+    grid-template-rows: repeat(3, 1fr);
+}
+
+/* =========================
+   LADO ESQUERDO
+   ========================= */
+
+.caixinha1 {
+    grid-column: 1;
+    grid-row: 1 / 4;
+    background-color: #174f50;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 8%;
+}
+
+/* Título */
+.caixinha1 h1 {
+    width: 70%;
+    font-size: clamp(30px, 4vw, 55px);
+    line-height: 1.05;
+    margin-bottom: 15px;
+}
+
+/* Texto */
+.caixinha1 p {
+    font-size: clamp(16px, 1.5vw, 22px);
+    margin-bottom: 25px;
+}
+
+/* Botão */
+.caixinha1 button {
+    width: 120px;
+    height: 40px;
+    border: none;
+    border-radius: 2px;
+    background-color: #dd6543;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+/* Efeito ao passar o mouse */
+.caixinha1 button:hover {
+    background-color: #c94f31;
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   CARDS DA DIREITA
+   ========================= */
+
+.caixinha2 {
+    background-color: white;
+    border: 1px solid #d6d3ce;
+    margin: 0 8% 0 5%;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Título dos cards */
+.caixinha2 h2 {
+    font-size: clamp(18px, 1.5vw, 26px);
+    margin-bottom: 8px;
+}
+
+/* Texto dos cards */
+.caixinha2 p {
+    font-size: clamp(13px, 1vw, 18px);
+
+    color: #333;
+}
+
+
+/* =========================
+   ESPAÇAMENTO DOS CARDS
+   ========================= */
+
+.caixinha2:nth-child(2) {
+    margin-top: 8%;
+}
+
+.caixinha2:nth-child(4) {
+    margin-bottom: 8%;
+}
+
+
+/* =========================
+   RODAPÉ
+   ========================= */
+
+footer {
+    width: 100%;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid #eeeeee;
+    background-color: white;
+    font-size: 10px;
+    color: #333;
+}
+
+
