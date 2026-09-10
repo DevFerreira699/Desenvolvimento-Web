@@ -1,0 +1,24 @@
+*{
+    padding: 0;
+    margin: 0;
+    background-color: 
+}
+#CaixaUm{
+    margin: 20px 50% 15px 50px;
+
+
+.caixinha1{
+    border: 2px solid #000000;
+    text-align: center;
+    background-color: rgb(43, 81, 81);
+    padding: 100px;
+
+    
+}
+
+.caixinha2{
+    border: 1px solid #000000;
+    text-align: center;
+    background-color: blueviolet;
+
+}
