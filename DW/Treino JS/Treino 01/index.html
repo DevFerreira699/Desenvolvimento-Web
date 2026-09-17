@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculadora de Soma</title>
+</head>
+<body>
+    <div class="calculator-card">
+        <h2>Somador</h2>
+        <form id="calcForm">
+            <div class="form-group">
+                <label for="num1">Primeiro Número:</label>
+                <input type="number" id="num1" step="any" required placeholder="Digite o 1º valor">
+            </div>
+
+            <div class="form-group">
+                <label for="num2">Segundo Número:</label>
+                <input type="number" id="num2" step="any" required placeholder="Digite o 2º valor">
+            </div>
+
+            <button type="submit">Somar</button>
+        </form>
+
+        <div class="result-container">
+            Resultado: <span id="resultado">0</span>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+
+</body>
+</html>
