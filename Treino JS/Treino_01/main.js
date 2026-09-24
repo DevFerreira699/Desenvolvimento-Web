@@ -1,3 +1,4 @@
+//Nome: Thiago Viana Ferreira RE: 26110135
 const formulario = document.getElementById("calcForm")
 
 formulario.addEventListener("submit", function(e){ e.preventDefault();
