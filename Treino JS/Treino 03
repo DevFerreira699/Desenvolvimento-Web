@@ -1,1 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
 
+<body>
+    <header>
+        <section>
+            <h1>💰Pedido / Orçamento</h1>
+            <p>Adicione seus produtos ou serviços e calcule o total</p>
+        </section>
+        <section>
+            <h2>Desconto</h2>
+            <span id="%">25%</span>
+        </section>
+    </header>
+    <main>
+        <section>
+            <h3>PRODUTOS / SERVIÇOS</h3>
+            <form>
+                <fieldset>
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <th>Produto / Serviço</th>
+                                <th>Quantidade</th>
+                                <th>Preço</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </fieldset>
+            </form>
+        
+            <form>
+                <fieldset>
+                    <ol>
+                        <li>Xbox Serie X</li>
+                        <input type="number" name="Quantidade" id="">
+                        <span id="prod1">R$3500,00</span>
+                        <span class="totalProduto">Total</span>
+
+                        <li>Playstation 5 Pro</li>
+                        <input type="number" name="Quantidade" id="">
+                        <span id="prod2">R$4500,00</span>
+                        <span class="totalProduto">Total</span>
+
+                        <li>Nintendo Switch</li>
+                        <input type="number" name="Quantidade" id="">
+                        <span id="prod3">R$2600,00</span>
+                        <span class="totalProduto">Total</span>
+                    </ol>
+                </fieldset>
+            </form>
+        
+            <section>
+                <input type="button" value="➕ Adicionar Item">
+            </section>
+        </section>
+
+
+        <section>
+            <section>
+                <form>
+                    <fieldset>
+                        <input type="button" value="🧮 Calcular Pedido">
+                        <h3>Total sem desconto</h3>
+                        <span id="semDesc">Total</span>
+                        <p>Desconto (25%)</p>
+
+                        <h4>Total com desconto</h4>
+                        <span id="comDesc">Total</span>
+                    </fieldset>
+                </form>
+            </section>
+        </section>
+    </main>
+</body>
+</html>
