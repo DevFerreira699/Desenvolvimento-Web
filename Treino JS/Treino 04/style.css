@@ -1,0 +1,188 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 25px;
+    font-family: Arial, sans-serif;
+    background: #f1f5f9;
+    color: #1e293b;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    background: #0f766e;
+    color: white;
+    padding: 25px;
+    border-radius: 14px;
+    margin-bottom: 25px;
+}
+
+header h1 {
+    margin-top: 0;
+}
+
+header p {
+    margin-bottom: 0;
+}
+
+.desconto {
+    text-align: center;
+    background: #115e59;
+    padding: 12px 25px;
+    border-radius: 10px;
+}
+
+.desconto h2 {
+    font-size: 16px;
+    margin-top: 0;
+}
+
+#percentual {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+main {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(260px, 1fr);
+    gap: 25px;
+    align-items: start;
+}
+
+.produtos,
+.resumo {
+    background: white;
+    padding: 22px;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px #0000000d;
+}
+
+h3 {
+    margin-top: 0;
+}
+
+.tabela-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 12px 8px;
+    border-bottom: 1px solid #e2e8f0;
+    text-align: left;
+}
+
+th {
+    background: #f8fafc;
+    font-size: 13px;
+}
+
+input {
+    width: 100%;
+    min-width: 75px;
+    padding: 9px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.nome {
+    min-width: 150px;
+}
+
+.totalProduto {
+    white-space: nowrap;
+    font-weight: bold;
+}
+
+button {
+    padding: 12px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+#adicionar {
+    margin-top: 18px;
+    background: #0f766e;
+    color: white;
+}
+
+#calcular {
+    width: 100%;
+    background: #2563eb;
+    color: white;
+    margin: 10px 0 20px;
+}
+
+.remover {
+    padding: 8px;
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+.linha-resumo {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 15px 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.linha-resumo strong {
+    text-align: right;
+}
+
+.total-final {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background: #dcfce7;
+    color: #166534;
+}
+
+.total-final strong {
+    font-size: 25px;
+}
+
+@media (max-width: 850px) {
+    body {
+        padding: 12px;
+    }
+
+    header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    main {
+        grid-template-columns: 1fr;
+    }
+
+    .desconto {
+        width: 100%;
+    }
+
+    .produtos,
+    .resumo {
+        padding: 15px;
+    }
+}

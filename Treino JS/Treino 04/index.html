@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido / Orçamento</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <section>
+            <h1>💰 Pedido / Orçamento</h1>
+            <p>Adicione seus produtos ou serviços e calcule o total.</p>
+        </section>
+        <section class="desconto">
+            <h2>Desconto</h2>
+            <span id="percentual">0%</span>
+        </section>
+    </header>
+
+    <main>
+        <section class="produtos">
+            <h3>PRODUTOS / SERVIÇOS</h3>
+
+            <div class="tabela-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Produto / Serviço</th>
+                            <th>Quantidade</th>
+                            <th>Preço unitário</th>
+                            <th>Total</th>
+                            <th>Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody id="listaProdutos">
+                        <tr>
+                            <td><input class="nome" value="Xbox Series X"></td>
+                            <td><input class="quantidade" type="number" min="0" step="1" value="0"></td>
+                            <td><input class="preco" type="number" min="0" step="0.01" value="3500"></td>
+                            <td class="totalProduto">R$ 0,00</td>
+                            <td><button class="remover" type="button">✖</button></td>
+                        </tr>
+                        <tr>
+                            <td><input class="nome" value="PlayStation 5 Pro"></td>
+                            <td><input class="quantidade" type="number" min="0" step="1" value="0"></td>
+                            <td><input class="preco" type="number" min="0" step="0.01" value="4500"></td>
+                            <td class="totalProduto">R$ 0,00</td>
+                            <td><button class="remover" type="button">✖</button></td>
+                        </tr>
+                        <tr>
+                            <td><input class="nome" value="Nintendo Switch"></td>
+                            <td><input class="quantidade" type="number" min="0" step="1" value="0"></td>
+                            <td><input class="preco" type="number" min="0" step="0.01" value="2600"></td>
+                            <td class="totalProduto">R$ 0,00</td>
+                            <td><button class="remover" type="button">✖</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <button id="adicionar" type="button">➕ Adicionar Item</button>
+        </section>
+
+        <section class="resumo">
+            <h3>🧮 Resumo do Pedido</h3>
+            <button id="calcular" type="button">Calcular Pedido</button>
+
+            <div class="linha-resumo">
+                <span>Total sem desconto</span>
+                <strong id="semDesc">R$ 0,00</strong>
+            </div>
+
+            <div class="linha-resumo">
+                <span>Desconto aplicado</span>
+                <strong id="valorDesconto">R$ 0,00 (0%)</strong>
+            </div>
+
+            <div class="total-final">
+                <h3>Total com desconto</h3>
+                <strong id="comDesc">R$ 0,00</strong>
+            </div>
+        </section>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>
