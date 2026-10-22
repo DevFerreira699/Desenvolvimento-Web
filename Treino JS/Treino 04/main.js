@@ -65,7 +65,7 @@ function calcularPedido() {
     if (total < 100) {
         percentual = 0;
     } else if (total < 500) {
-        percentual = 5;
+        percentual = 5; 
     } else {
         percentual = 10;
     }
