@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>RiscoZero</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Semi+Condensed:wght@600;700&display=swap">
+
+</head>
+<body>
+<div class="app">
+  <aside>
+    <div class="logo"><i></i>SecurityPro</div>
+    <nav class="menu" aria-label="Menu principal">
+      <button data-tab="dash" aria-current="page">Painel</button>
+      <button data-tab="reg">Registrar ocorrência</button>
+      <button data-tab="risk">Mapa de riscos</button>
+      <button data-tab="hist">Histórico</button>
+
+      <button data-tab="test">Testes</button>
+    </nav>
+  </aside>
+  <div class="content">
+    <header class="top">
+      <div><h1 id="pageTitle">Painel</h1><p>Gestão de ocorrências e riscos</p></div>
+      <button class="btn" data-go="reg">Nova ocorrência</button>
+    </header>
+    <main>
+      <div class="alert no" id="dbError" hidden></div>
+
+      <section id="dash">
+        <div class="kpis" id="kpis"></div>
+        <div class="grid2">
+          <div class="card"><h2>Ocorrências por gravidade</h2><div id="chGrav"></div></div>
+          <div class="card"><h2>Ocorrências por andamento</h2><div id="chSt"></div></div>
+        </div>
+        <div class="card"><h2>Últimas ocorrências</h2><div class="tw"><table id="tRecent"></table></div></div>
+      </section>
+
+      <section id="reg" hidden>
+        <form class="card" id="form" novalidate>
+          <div class="full alert ok" id="fmsg" role="status" hidden></div>
+          <label>Tipo de ocorrência<select id="tipo"></select></label>
+          <label>Gravidade<select id="grav"><option value="">Selecione</option><option>Baixa</option><option>Média</option><option>Alta</option><option>Crítica</option></select></label>
+          <label>Local<input id="local" type="text" maxlength="60" placeholder="Ex.: Almoxarifado, Bloco B"></label>
+          <label>Data<input id="data" type="date"></label>
+          <label class="full">Descrição<textarea id="desc" maxlength="500" placeholder="Descreva o que aconteceu e o que foi feito na hora."></textarea></label>
+          <div class="full"><button class="btn" type="submit">Salvar ocorrência</button></div>
+        </form>
+      </section>
+
+      <section id="risk" hidden>
+        <div class="card"><h2>Riscos identificados</h2>
+          <p class="count">Gerados a partir das ocorrências (tipo e local). As medidas recomendadas vêm da tabela medidas do banco.</p>
+          <div class="tw"><table id="tRisk"></table></div></div>
+      </section>
+
+      <section id="hist" hidden>
+        <div class="card"><h2>Histórico e acompanhamento</h2>
+          <div class="filters">
+            <label>Gravidade<select id="fGrav"><option value="">Todas</option><option>Baixa</option><option>Média</option><option>Alta</option><option>Crítica</option></select></label>
+            <label>Andamento<select id="fSt"><option value="">Todos</option><option>Aberta</option><option>Em andamento</option><option>Concluída</option></select></label>
+            <label>Busca<input id="busca" type="search" placeholder="Local, tipo ou descrição"></label>
+          </div>
+          <p class="count" id="count"></p>
+          <div class="tw"><table id="tHist"></table></div></div>
+      </section>
+
+      <section id="banco" hidden>
+        <div class="card"><h2>Banco de dados local</h2>
+          <p class="count" id="dbInfo"></p>
+          <div class="tw"><table id="tSchema"></table></div>
+          <p class="count" style="margin-top:14px">Estrutura equivalente em SQL, para a documentação do trabalho:</p>
+<pre>CREATE TABLE ocorrencias (
+  id        INTEGER PRIMARY KEY AUTOINCREMENT,
+  tipo      TEXT NOT NULL,
+  local     TEXT NOT NULL,
+  data      DATE NOT NULL,
+  descricao TEXT NOT NULL,
+  gravidade TEXT NOT NULL,   -- Baixa, Média, Alta, Crítica
+  status    TEXT NOT NULL,   -- Aberta, Em andamento, Concluída
+  chave     TEXT UNIQUE      -- impede registros duplicados
+);
+CREATE TABLE historico (
+  id            INTEGER PRIMARY KEY AUTOINCREMENT,
+  ocorrenciaId  INTEGER REFERENCES ocorrencias(id),
+  data          DATE,
+  texto         TEXT
+);
+CREATE TABLE medidas (tipo TEXT PRIMARY KEY, texto TEXT);</pre>
+        </div>
+      </section>
+
+      <section id="test" hidden>
+        <div class="card"><h2>Testes do sistema</h2>
+          <p class="count">Roda verificações de campos vazios, duplicidade, indicadores e persistência em um banco temporário. Os dados reais não são alterados.</p>
+          <button class="btn" id="runTests">Executar testes</button>
+          <ul class="tests" id="results"></ul>
+          <h2 style="margin-top:18px">Conferir manualmente na apresentação</h2>
+          <ul class="checks"><li>Diminuir a janela do navegador (ou abrir no celular) e verificar menu, cartões e tabelas.</li>
+          <li>Registrar uma ocorrência, recarregar a página (F5) e confirmar que ela continua na tabela.</li>
+          <li>Tentar salvar o formulário vazio e depois repetir o mesmo registro.</li>
+          <li>Abrir a aba Banco de dados e mostrar tabelas, índices e quantidade de registros.</li></ul>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <span>SecurityPro – protótipo acadêmico de empreendedorismo. Banco de dados local (IndexedDB), salvo neste navegador.</span>
+      <button class="btn ghost sm" id="reset">Restaurar exemplos</button>
+      <button class="btn ghost sm" id="clear">Apagar tudo</button>
+    </footer>
+  </div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
