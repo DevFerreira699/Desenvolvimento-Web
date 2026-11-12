@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeDex</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>  
+        <h1>Buscar pokemon</h1>
+        
+        <form id="formPoke">
+            <input type="number" id="idPoke" placeholder="Digite o ID" min="1" required>
+            <button type="submit">Buscar</button>
+        </form>
+
+        <p id="msg"></p>
+
+        <div id="resultado">
+            <h2 id="nomePokemon"></h2>
+            <img src="" alt="Imagem do pokemon" id="imgPoke">
+            <p id="basePoke"> </p>
+            <p id="alturaPoke"> </p>
+            <p id="pesoPoke"></p>
+            <p id="locPoke"></p>
+        </div>
+    </main>
+    <script src="main.js"></script>
+</body>
+</html>
